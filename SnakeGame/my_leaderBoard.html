@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel = "stylesheet" href = "./css/leaderBoard.css">
+</head>
+<body>
+    <div id = "titleText">
+        Leaderboard
+    </div>
+
+    <div id = "ranks">
+        <table>
+            <thead>
+                <th>Rank</th>
+                <th>Username</th>
+                <th>Score</th>
+            </thead>
+            <tbody id = "tbody"></tbody>
+        </table>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script id = "MainScript">
+        const firebaseConfig = {
+          apiKey: "AIzaSyB3y6nCV1JIoA10WUaBo-yefDDFkt6eAeo",
+          authDomain: "swe-snake-game.firebaseapp.com",
+          projectId: "swe-snake-game",
+          storageBucket: "swe-snake-game.appspot.com",
+          messagingSenderId: "309079433923",
+          appId: "1:309079433923:web:b8993b20f518f830877876",
+          measurementId: "G-65GJSR16TW"
+        };
+        
+        firebase.initializeApp(firebaseConfig);
+        let db = firebase.firestore()
+      </script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <link href="style.css" rel="stylesheet" type="text/css" />
+ <head>
+    <style>
+    .mfb{
+      text-align: center;
+      display: inline_block;
+      margin-right: 100px;
+    } 
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 1; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+
+    </style>
+ </head>
+
+ <body>
+   <!-- CHANGE Trigger/Open The Modal to DEATH OF SNAKE -->
+   <button id="myBtn">Open Modal</button>
+
+   <!-- The Modal -->
+   <div id="myModal" class="modal">
+
+     <!-- Modal content -->
+     <div class="modal-content">
+
+        <center><h1>GAME OVER</h1></center>
+        <!--HTML header tag starts here-->
+        <header>
+            <center><h4>SCORE</h4></center>
+            <center><h3>5</h3></center>
+        </header>
+
+        <!--CHANGE HREF LINKS FOR BUTTONS --> 
+        <div class="mfb">
+          <button onclick="window.location.href='welcomePage.html';" style="margin-left: 100px;">HOME</button>
+          <button onclick="window.location.href='index.html';">PLAY AGAIN</button>
+          <button onclick="window.location.href='leaderboard.html';">RANKS</button>
+        </div>
+
+     </div>
+
+   </div>
+    <script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "block";
+      }
+    }
+    </script>
+
+  </body>
+</html> 
+
+<!DOCTYPE html>  
+</html>  
+
+<!--//LOSE SCREEN FRONT-END>
+^CAN BE A DROP DOWN THAT COMES OVER THE SOLO GAME SCREEN AFTER LOSS
+
+
+
+
+
+
+CLEARLY STATE THE PLAYER HAS LOST
+THE SCREEN SHOULD BE ALMOST IDENTICAL TO THE WIN SCREEN
+SHOULD HAVE PLAY AGAIN(RESET SOLO GAME), CONTINUE(TO LEADERBOARD), HOME(WELCOME SCREEN) BUTTONS
+-SHOULD HAVE PLAYER SCORE-->

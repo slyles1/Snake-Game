@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel = "stylesheet" href = "./css/welcomePage.css">
+    <script>
+        function myFunction(){
+            // alert(document.getElementById("name").value);
+            if (document.getElementById("name").value){
+                window.location.href = "welcomePage.html";
+            }
+            else{
+                alert("Your name cannot be empty! Please enter your name again :)");
+                
+            }            
+            // document.getElementById("output").value = document.getElementById("name").value;
+        }
+        document.querySelector('#submit_name').addEventListener('submit', myFunction)
+        
+    </script>
+</head>
+<body>
+    <div class="bgimg">
+        <div class="middle">
+          <h1>SNAKE GAME</h1>
+        </div>
+        
+        <!-- ask for name -->
+        <div id = "taking_input">
+            <input type="text" placeholder="Enter your name" id = "name" minlength="1"> 
+            <button type="submit" onclick = "myFunction()" id = "submit_name" class="button-64" >Submit</button> 
+        </div>
+
+        <div id = "output">
+           <p id = "output_paragraph"></p>
+        </div>
+        
+        <!-- <button class = "leaderboardbutton" role = "button"><span class="text">LEADERBOARD</span></button> -->
+        
+    </div>
+
+</body>
+</html>

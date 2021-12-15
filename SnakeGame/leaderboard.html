@@ -1,0 +1,105 @@
+<html>
+
+  <style>
+    table {
+      font-family: arial, sans-serif;
+      border-collapse: collapse;
+      top: 50%;
+      bottom: 10px;
+      width: 100%;
+      /* position: center; */
+    }
+
+    td, th {
+      border: 1px solid #cccccc;
+      padding: 8px;
+    }
+
+    th {
+      font-weight: bold;
+      text-trsform: uppercase;
+    }
+    
+    tr:nth-child(even) {
+      background-color: #dddddd;
+    }
+
+    tr:hover {
+      background-color: black;
+      color: white;
+    }
+  </style>
+
+  <script>
+    let sortDirection = false;
+    let persondata = [
+      {player: 'Spencer', score: 17},
+      {player: 'Zoe', score: 10},
+      {player: 'Marquise', score: 7},
+      {player: 'Manish', score: 5},
+      {player: 'John Doe', score: 2},
+      {player: 'Player1', score: 3},
+      {player: '1', score: 2},
+      {player: 'Zoe', score: 6},
+      {player: 'Manish', score: 7},
+    ];
+
+    window.onload = () => {
+      loadTableData(persondata);
+      sortColumn('score');
+    };
+
+    function loadTableData(persondata) {
+      const tableBody = document.getElementById('tableData');
+      let dataHtml = '';
+      
+      for(let person of persondata) {
+        dataHtml += `<tr><td>${person.player}</td><td>${person.score}</td></tr>`
+      }
+      tableBody.innerHTML = dataHtml
+    }
+
+    function sortColumn(columnName) {
+      const dataType = typeof persondata[0][columnName];
+      sortDirection = !sortDirection;
+
+      switch(dataType) {
+        case 'number':
+        sortNumberColumn(sortDirection, columnName);
+        break;
+      }
+      loadTableData(persondata);
+    }
+
+    function sortNumberColumn(sort, columnName) {
+      persondata = persondata.sort((p1,p2) => {
+        return sort ? p1[columnName]-p2[columnName] : p2[columnName] - p1[columnName]
+      });
+    }
+  </script>
+
+  <body>
+    <table>
+      <thead>
+      <tr>
+        <th>PLAYER</th>
+        <th> SCORE</th>
+      </tr>
+    </thead>
+    <tbody id="tableData"></tbody>
+    </table>
+    
+
+  </body> 
+</html>   
+
+
+<!--LEADERBOARD FRONT-END
+SHOW TOP 10 SCORES IN A LEADERBOARD FORMAT
+-INCLUDING SCORES, RANK #, NAME OF PLAYER
+
+THIS SCREEN IS ACCESSED AFTER A PLAYER HAS FINISHED PLAYING THE GAME
+-IF THEY PLAYED(NOT ACCESSED FROM WELCOME SCREEN) THEY SHOULD HAVE THE OPTION TO ENTER THEIR NAME AND SEE WHERE THEY PLACED IN THE LEADERBOARD
+
+CLEARLY INSTRUCT FOR WINNERS TO ENTER THEIR NAME-->
+
